@@ -57,8 +57,6 @@ var writerOpts = {
       commit.type = 'Performance Improvements';
     } else if (commit.type === 'revert') {
       commit.type = 'Reverts';
-    } else if (discard) {
-      return;
     } else if (commit.type === 'docs') {
       commit.type = 'Documentation';
     } else if (commit.type === 'style') {
@@ -67,6 +65,8 @@ var writerOpts = {
       commit.type = 'Code Refactoring';
     } else if (commit.type === 'test') {
       commit.type = 'Tests';
+    } else if (discard) {
+      return;
     } else if (commit.type === 'chore') {
       commit.type = 'Chores';
     }
